@@ -1,0 +1,95 @@
+.view-posts {
+    /* background-color: #DFBB9D; */
+    background-color: #F7E2D6;
+}
+.posts{
+    margin-top: 100px;
+}
+.posts > div > a {
+    margin-bottom: 20px;
+}
+.nameP {
+    display: flex;
+    justify-content: flex-end;
+    color: #B9005B;
+}
+.create{
+    margin-top: 150px;
+}
+.create h1 {
+    margin-left: 43%;
+    color: #513252;
+}
+#myForm {
+    margin-top: 50px;
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.feedback-input {
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #3586ff;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+  }
+  .feedback-input:focus {
+    border: 2px solid #3586ff;
+  }
+  
+  textarea {
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+  }
+  #myForm [type="submit"] {
+    width: 100%;
+    background: #513252;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+    width: 50%;
+    margin-left: 26%;
+  }
+  #myForm [type="submit"]:hover:hover {
+    background: green;
+  }
+  .posts-grid{
+    display: grid;
+    gap: 30px;
+  }
+  .col{
+    background-color: pink;
+    padding: 2%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .h2-posts{
+    color: rgb(39, 22, 22);
+  }
+  .p-heading{
+    font-size: 22px;
+  }
+  .text{
+    color: #1A3C40; 
+  }
+  .edit-delete{
+    display: flex;
+  }
