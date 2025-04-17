@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+    <section class="hero">
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">Unleash Creativity, One Post at a Time!</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">Create Posts and Read: Your hub for literary adventures! Unleash your imagination, craft stories, and dive into a universe of endless tales. Join us in sharing and discovering captivating narratives today!</p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <button type="button" onclick="location.href = '/create';" class="btn btn-warning btn-lg px-4 me-sm-3">Create Posts</button>
+              </div>
+            </div>
+            <div class="overflow-hidden" style="max-height: 80vh;">
+              <div class="container px-5">
+                <img src="/images/hero.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="900" height="800" loading="lazy">
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <% if(submittedData.length > 0) { %>
+        <section class="view-posts">
+            <div class="container px-4 py-5" id="icon-grid">
+                <h2 class="pb-2 border-bottom h2-posts">View Posts</h2>
+                
+                <div class="posts-grid py-5">
+                    <% submittedData.forEach((post, index) => { %>
+                        <div class="col d-flex align-items-start">
+                            <div class="list-group-item list-group-item-action py-3 lh-sm">
+                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <strong class="mb-1 p-heading"> <%= post.fTitle %> </strong>
+                                    <small> <%= post.tDate %> </small>
+                                </div>
+                                <div class="col-10 mb-1 small"> <%= post.fText %> </div>
+                                <div class="col-l2 small nameP">- <%= post.fName %></div>
+                                <div class="edit-delete">
+                                    <a href="/edit/<%= post._id %>" class="btn btn-warning btn-sm px-4 me-sm-3 align-items-center">Edit</a>
+                                    <form action="/delete/<%= post._id %>" method="POST">
+                                        <button type="submit" class="btn btn-warning btn-sm px-4 me-sm-3 align-items-center" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+        
+        <%  } else { %>  
+
+        <% } %>
+
+<%- include("partials/footer.ejs") %>
