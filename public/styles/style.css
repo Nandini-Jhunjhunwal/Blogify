@@ -4,6 +4,7 @@ body {
 
 .nav {
   --bs-nav-link-hover-color: pink;
+
 }
 
 .hero {
@@ -34,7 +35,7 @@ svg {
 }
 
 .nav-item {
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .nav-pills .nav-link {
@@ -50,13 +51,13 @@ svg {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #ae8080;
   background-color: pink;
 }
 
 .nav-pills .nav-link.active:hover,
-.nav-pills .show > .nav-link:hover {
+.nav-pills .show>.nav-link:hover {
   background-color: #e685b5;
 }
 
@@ -104,7 +105,7 @@ svg {
   color: #e685b5;
 }
 
-.lists > p {
+.lists>p {
   align-items: center;
   padding-left: 45%;
   font-size: 1.2rem;
@@ -114,13 +115,13 @@ svg {
 }
 
 @media (max-width: 480px) {
-  .lists > p {
+  .lists>p {
     padding-left: 28%;
   }
 }
 
 @media (min-width: 700px) and (max-width: 1084px) {
-  .lists > p {
+  .lists>p {
     padding-left: 40%;
   }
 }
@@ -145,8 +146,200 @@ svg {
 
 footer {
   position: relative;
-  background: linear-gradient(to bottom, #F7E2D6, #ae8080); /* Soft pastel gradient */
-  padding-top: 0;
-  margin-top: -5px;
+  background: linear-gradient(to bottom, #F7E2D6, #a87777);
+  padding-top: 40px; /* 👈 Reduce this if needed */
+  margin-top: -20px;  /* 👈 Negative margin to pull up footer */
+  z-index: 2;
+}
+
+
+
+input.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.card {
+  border-radius: 16px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  /* Adjusted for slightly wider sidebar */
+  width: 330px;
+  height: 100%;
+  background: linear-gradient(135deg, #fce7dc, #fff5f5);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 0 15px 20px;
+  transition: right 0.4s ease;
+  z-index: 9999;
+  border-left: 2px solid #e6bebe;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+
+
+.profile-card {
+  background: #ffffff;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.profile-card h2,
+.profile-card p {
+  margin-bottom: 10px;
+  color: #513252;
+  font-size: 0.95rem;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #e7b3b3;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.view-posts-btn,
+.logout-btn {
+  background-color: #f08b93;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  border: none;
+  transition: background-color 0.3s ease;
+  display: block;
+  text-decoration: none;
+}
+
+
+
+.logout-btn:hover,
+.view-posts-btn:hover {
+  background-color: #e4727b;
+}
+
+.stats-bar {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.blogify-section {
+  position: relative;
+  min-height: 300px;
+  background-color: #F7E2D6;
+  overflow: hidden;
+  z-index: 0;
+  padding: 2rem 0;       /* 👈 Add some padding instead of min-height */
+  margin-bottom: 0;  /* 👈 Add this */
+}
+
+
+.blogify-text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(200px, 20vw, 300px); /* Adjusts dynamically but stays big */
+  font-weight: 900;
+  background: linear-gradient(to bottom, #332626, #baa294);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.08;
+  user-select: none;
+  white-space: nowrap;
   z-index: 1;
+}
+
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #F7E2D6;
+  top:20%;
+  margin: 2rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-box {
+  background: rgb(199, 171, 171);
+  border-radius: 12px;
+  padding: 2rem 3rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info h2 {
+  font-weight: 700;
+  color: #ae8080 ;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.social-icons a {
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ae8080;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #ae8080;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form button {
+  background-color: #ae8080;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ae8080;
 }
