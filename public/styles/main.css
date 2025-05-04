@@ -14,7 +14,7 @@
     color: #B9005B;
 }
 .create{
-    margin-top: 150px;
+    margin-top: 60px;
 }
 .create h1 {
     margin-left: 43%;
@@ -93,3 +93,28 @@
   .edit-delete{
     display: flex;
   }
+  .quill-editor {
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .ql-toolbar.ql-snow {
+    padding: 8px;
+  }
+  
+  .ql-container {
+    border-radius: 5px;
+  }
+  
+  .card {
+    transition: transform 0.2s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+  .card-text {
+    word-wrap: break-word;
+  }
+  
+  
