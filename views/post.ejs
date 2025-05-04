@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<section class="container px-4 py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-sm rounded-4 overflow-hidden">
+                <img src="<%= post.imageData || '/images/bear.png' %>" class="card-img-top" alt="Post Image"
+                     style="height: 300px; object-fit: cover;">
+
+                <div class="card-body p-4">
+                    <h2 class="card-title fw-bold mb-3"><%= post.fTitle %></h2>
+                    <p class="text-muted small mb-4">By <%= post.fName %> | <%= post.tDate %></p>
+
+                    <p class="card-text" style="white-space: pre-line;"><%= post.fText %></p>
+
+                    <div class="mt-4 d-flex justify-content-start">
+                        <a href="/view" class="btn btn-outline-primary rounded-pill px-4">← Back to All Posts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

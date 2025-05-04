@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+<section class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="card shadow p-4" style="max-width: 500px; width: 100%; background-color: #fdfcfc;">
+    <h2 class="text-center mb-4 fw-bold text-dark">Create Your Account</h2>
+    <form action="/signup" method="POST">
+      <div class="mb-3">
+        <input 
+          type="text" 
+          name="name" 
+          class="form-control" 
+          placeholder="Full Name" 
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input 
+          type="text" 
+          name="username" 
+          class="form-control" 
+          placeholder="Username" 
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input 
+          type="email" 
+          name="email" 
+          class="form-control" 
+          placeholder="Email" 
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <input 
+          type="password" 
+          name="password" 
+          class="form-control" 
+          placeholder="Password" 
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-dark w-100">Sign Up</button>
+    </form>
+
+    <p class="text-center mt-3">Already have an account? <a href="/login" class="text-decoration-none">Login</a></p>
+  </div>
+</section>
+
+<%- include("partials/footer.ejs") %>
