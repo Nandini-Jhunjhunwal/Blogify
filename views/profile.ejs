@@ -1,0 +1,44 @@
+<%- include("partials/header.ejs") %>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fbf4f0; /* light peach background to match the theme */
+  }
+  main {
+    flex: 1;
+  }
+</style>
+
+<main class="container mt-5 text-light" style="max-width: 800px;">
+  <div class="card shadow-lg border-0 rounded-4 p-4" style="background: linear-gradient(135deg, #f5d7d7, #fff0f0); color: #3d2c2c;">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="https://img.icons8.com/ios/452/user-male-circle.png" alt="Avatar" style="width: 120px;" class="rounded-circle mb-3">
+      </div>
+      <div class="col-md-8">
+        <% if (user) { %>
+          <h3 class="fw-bold">@<%= user.username %></h3>
+          <p class="mb-1"><strong>Name:</strong> <%= user.name %></p>
+          <p class="mb-1"><strong>Email:</strong> <%= user.email %></p>
+          <p class="mb-1"><strong>Password:</strong> (hidden for security)</p>
+          <p><strong>Signup Date:</strong> 
+            <%= (new Date(currentUser?.createdAt)).toDateString() || 'Unknown' %>
+          </p>
+          
+
+          <a href="/view" class="btn btn-outline-light me-2">View Your Posts</a>
+          <form action="/logout" method="POST" class="d-inline">
+            <button class="btn btn-danger">Logout</button>
+          </form>
+        <% } else { %>
+          <p>User not logged in.</p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("partials/footer.ejs") %>

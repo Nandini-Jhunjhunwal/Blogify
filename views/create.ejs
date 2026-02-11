@@ -5,18 +5,30 @@
     <form id="myForm" action="/edit/<%= postToEdit._id %>" method="POST">
       <input name="name" value="<%= postToEdit.fName %>" type="text" class="feedback-input" placeholder="Name" required />
       <input name="title" value="<%= postToEdit.fTitle %>" type="text" class="feedback-input" placeholder="Title" required />
+
+      <!-- Show current image -->
+      <label>Current Image:</label><br />
+      <img src="<%= postToEdit.imageData || '/images/bear.png' %>" alt="Current Image" style="max-height: 500px;" /><br /><br />
+
+      <!-- Upload new image -->
+      <input type="file" id="imageUpload" accept="image/*" class="feedback-input" />
+      <input type="hidden" name="imageData" id="imageData" />
+
       <textarea name="text" class="feedback-input" placeholder="Description" required><%= postToEdit.fText %></textarea>
       <input type="submit" value="SUBMIT" />
     </form>
-</section>
-<% }else { %>
+  </section>
+<% } else { %>
+  
 <section class="container create">
     <h1>Create Post</h1>
     <form id="myForm" action="/submit" method="POST">
       <input name="name" type="text" class="feedback-input" placeholder="Name" required />
       <input name="title" type="text" class="feedback-input" placeholder="Title" required>
+      <input type="file" id="imageUpload" accept="image/*" class="feedback-input" />
+      <input type="hidden" name="imageData" id="imageData" />
       <textarea name="text" class="feedback-input" placeholder="Description" required></textarea>
-      <input type="submit" value="SUBMIT" />
+      <input type="submit" value="SUBMIT"/>
     </form>
 </section>
 <% } %>
